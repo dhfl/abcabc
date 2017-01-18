@@ -26,7 +26,7 @@ public class UpAndDown {
 		}
 		////////////////////////////////////////////////////
 			
-		/////////////////////¸ÂÃèÀ» ¶§/////////////////////
+		/////////////////////ë§ì·„ì„ ë•Œ/////////////////////
 			if(mygame.match()==true){
 				System.out.println(mygame.updownmessege());
 				System.out.println(mygame.checkmessege());

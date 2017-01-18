@@ -10,7 +10,7 @@ public class UpAndDowNB {
 	private boolean check;
 	
 	public UpAndDowNB(){
-		//input ¼ıÀÚ, ·£´ı¼ıÀÚ, ÇÕ°è, ÆÇ¼ö, Y/N
+		//input ìˆ«ì, ëœë¤ìˆ«ì, í•©ê³„, íŒìˆ˜, Y/N
 		int input=0;
 		int random_number=0;
 		int sum=0;
@@ -53,7 +53,7 @@ public class UpAndDowNB {
 	
 	public String gameStart(){
 		String messege = "Up and Down\n"
-					   + "1~100»çÀÌÀÇ ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.\n";
+					   + "1~100ì‚¬ì´ì˜ ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.\n";
 		return messege;
 	}
 	
@@ -79,10 +79,10 @@ public class UpAndDowNB {
 			return "DOWN!!";
 		}
 		else
-			return "Á¤´ä!!";
+			return "ì •ë‹µ!!";
 	}
 	public String checkmessege(){
-		return "°ÔÀÓÀ» °è¼ÓÇÏ½Ã°Ú½À´Ï±î?(Y/N)";
+		return "ê²Œì„ì„ ê³„ì†í•˜ì‹œê² ìŠµë‹ˆê¹Œ?(Y/N)";
 	}
 
 }
