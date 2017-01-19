@@ -2,27 +2,27 @@ package com.test.test;
 
 public class UpAndDown {
 	public static void main(String args[]){
-
-		while(true){
 		UpAndDowNB mygame = new UpAndDowNB();
+		UpAndDowNB regame = new UpAndDowNB();
+		regame.UpAndDowNB();
+		System.out.print(mygame.initGame());
+		while(regame.setCheck()==false){
+		///////////////////////////////////////////////////이거 안에만 수정
+
 		//GAME START MESSEGE
+		
 		System.out.println(mygame.gameStart());
+		
 		//GET RANDOM_NUMBER
 		mygame.setRandom_number();
 		
 		while(true){
+		
 		mygame.setInput();
-
 		/////////////////////UP DOWN////////////////////////
 			while(mygame.match()==false){
-			if(mygame.updown()==1){
-				System.out.println(mygame.updownmessege());
-				break;
-			}
-			else if(mygame.updown()==2){
-				System.out.println(mygame.updownmessege());
-				break;
-			}
+			System.out.println(mygame.updownmessege());
+			break;
 		}
 		////////////////////////////////////////////////////
 			
@@ -30,12 +30,8 @@ public class UpAndDown {
 			if(mygame.match()==true){
 				System.out.println(mygame.updownmessege());
 				System.out.println(mygame.checkmessege());
-				if(mygame.setCheck()==true){
-					continue;
-				}
-				else if(mygame.setCheck()==false){
-					break;
-				}
+				regame.getCheck();
+				break;					
 			}
 		////////////////////////////////////////////////////
 		 }

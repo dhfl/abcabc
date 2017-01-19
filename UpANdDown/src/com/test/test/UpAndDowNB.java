@@ -4,19 +4,19 @@ import java.util.Scanner;
 public class UpAndDowNB {
 	private int input;
 	private int random_number;
-	private int sum;
-	private int game_count;
-	private String chcakgame;
+	//private int sum;
+	//private int game_count;
 	private boolean check;
+	private String gostop=" ";
 	
 	public UpAndDowNB(){
 		//input 숫자, 랜덤숫자, 합계, 판수, Y/N
 		int input=0;
 		int random_number=0;
-		int sum=0;
-		int game_count=0;
-		String checkgame=" ";
 		boolean check=true;
+		//int sum=0;
+		//int game_count=0;
+		//String checkgame=" ";
 	}
 	
 	public int setInput(){
@@ -35,20 +35,19 @@ public class UpAndDowNB {
 	public void getRandom_number(){
 	}
 	
-	public boolean setCheck(){
+	
+	public String getCheck(){
 		Scanner check1 = new Scanner(System.in);
 		String gostop=" ";
-		gostop=check1.nextLine();
-		if(gostop == "Y" || gostop == "y")
-			check = true;
-		else if(gostop == "N" || gostop=="n")
-			check = false;
-		return check;
+		this.gostop=check1.nextLine();
+		return gostop;
 	}
-	public void getCheck(){
-		String gostop=" ";
-		Scanner check1 = new Scanner(System.in);
-		gostop=check1.nextLine();
+	public boolean setCheck(){
+		if(this.gostop == "Y" || this.gostop == "y")
+			this.check = check = true;
+		else if(this.gostop == "N" || this.gostop=="n")
+			this.check = check =false;
+		return check;
 	}
 	
 	public String gameStart(){
@@ -56,15 +55,35 @@ public class UpAndDowNB {
 					   + "1~100사이의 숫자를 입력해주세요.\n";
 		return messege;
 	}
-	
-	public int updown(){
-		if(input < random_number)
-		return 1;
-		else if(input > random_number)
-		return 2;
-		else
-		return 3;
+	public String startmessege(){
+		return "┌───────────────┐\n"
+			 + "│   UP & DOWN   │\n"
+			 + "│               │\n"
+			 + "│   S T A R T   │\n"
+			 + "│               │\n"
+			 + "└───────────────┘\n";
 	}
+	
+	public String initGame(){
+		return "┌───────────────┐\n"
+			 + "│   UP & DOWN   │\n"
+			 + "│1. 시작하기    │\n"
+			 + "│2. 그만하기    │\n"
+			 + "│3. 기록보기    │\n"
+			 + "└───────────────┘\n";
+	}
+	
+	public boolean up(){
+		if(input < random_number)
+		return true;
+		return false;
+	}
+	public boolean down(){
+		if(input > random_number)
+		return true;
+		return false;
+	}
+	
 	public boolean match(){
 		if(input==random_number)
 			return true;
@@ -72,17 +91,21 @@ public class UpAndDowNB {
 	}
 	
 	public String updownmessege(){
-		if(updown()==1){
+		if(up()==true)
 			return "UP!!";
-		}
-		else if(updown()==2){
+		else if(down()==true)
 			return "DOWN!!";
-		}
-		else
+		else if(match()==true)
 			return "정답!!";
+		return " ";
 	}
 	public String checkmessege(){
 		return "게임을 계속하시겠습니까?(Y/N)";
+	}
+	
+	public void clearconsole(){
+		for(int i=0;i<80;i++)
+			System.out.println(" ");
 	}
 
 }
