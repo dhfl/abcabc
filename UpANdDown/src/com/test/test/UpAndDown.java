@@ -4,7 +4,7 @@ public class UpAndDown {
 	public static void main(String args[]){
 		UpAndDowNB mygame = new UpAndDowNB();
 		UpAndDowNB regame = new UpAndDowNB();
-		regame.UpAndDowNB();
+		
 		System.out.print(mygame.initGame());
 		while(regame.setCheck()==false){
 		///////////////////////////////////////////////////이거 안에만 수정
